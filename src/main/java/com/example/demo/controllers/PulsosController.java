@@ -35,11 +35,10 @@ public class PulsosController {
     //private PulsoService service;
     private PulsoDao service;
 
-    @GetMapping
+    @GetMapping( produces = "text/event-stream")
     public Mono<ResponseEntity<Flux<Pulso>>> lista() {
         return Mono.just(
                 ResponseEntity.ok()
-                        .contentType(MediaType.APPLICATION_STREAM_JSON)
                         .body(service.findAll()
                         )
         );
