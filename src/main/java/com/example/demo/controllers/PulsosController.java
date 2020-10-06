@@ -40,7 +40,7 @@ public class PulsosController {
     //private PulsoDao service;
 
     @Tailable
-    @GetMapping("mono/tailable")
+    @GetMapping("/mono/tailable")
     public Mono<ResponseEntity<Flux<Pulso>>> listaTailable() {
         return Mono.just(
                 ResponseEntity.ok()
@@ -49,7 +49,7 @@ public class PulsosController {
         );
     }
 
-    @GetMapping("mono/tailable")
+    @GetMapping("/mono")
     public Mono<ResponseEntity<Flux<Pulso>>> lista() {
         return Mono.just(
                 ResponseEntity.ok()
