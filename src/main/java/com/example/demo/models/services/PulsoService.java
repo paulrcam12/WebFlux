@@ -16,4 +16,7 @@ import reactor.core.publisher.Flux;
 public interface PulsoService {
     
     public Flux<Pulso> findAll();
+    
+
+    Flux<Pulso> subscribe();
 }
