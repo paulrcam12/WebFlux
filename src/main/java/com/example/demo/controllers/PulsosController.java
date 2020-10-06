@@ -39,7 +39,7 @@ public class PulsosController {
     public Mono<ResponseEntity<Flux<Pulso>>> lista() {
         return Mono.just(
                 ResponseEntity.ok()
-                        .contentType(MediaType.APPLICATION_JSON_UTF8)
+                        .contentType(MediaType.APPLICATION_STREAM_JSON)
                         .body(service.findAll()
                         )
         );

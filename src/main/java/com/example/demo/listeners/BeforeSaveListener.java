@@ -5,29 +5,31 @@
  */
 package com.example.demo.listeners;
 
+import com.example.demo.SpringWebFluxApplication;
 import com.example.demo.domain.BaseEntity;
+import com.example.demo.models.documents.Pulso;
 import java.util.Date;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.data.mongodb.core.mapping.event.AbstractMongoEventListener;
+import org.springframework.data.mongodb.core.mapping.event.AfterSaveEvent;
 import org.springframework.data.mongodb.core.mapping.event.BeforeSaveEvent;
 
 /**
  *
  * @author PaulRCam
  */
-public class BeforeSaveListener  extends AbstractMongoEventListener<BaseEntity>{
+
+
+public class BeforeSaveListener  extends AbstractMongoEventListener<Pulso>{
+    
+    
+    private static final Logger log= LoggerFactory.getLogger(BeforeSaveListener.class);
      @Override
-    public void onBeforeSave(BeforeSaveEvent<BaseEntity> event) {
+    public void onAfterSave(AfterSaveEvent<Pulso> event) {
 
-        Date timestamp = new Date();
-
-        // Add a timestamp to the created date if it does not yet exist
-        if (event.getSource().getCreatedAt() == null)
-            event.getSource().setCreatedAt(timestamp);
-
-        // Update the timestamp to the current time
-        event.getSource().setLastModified(timestamp);
-
-        super.onBeforeSave(event);
+         System.out.println("Ok");
+        super.onAfterSave(event);
     }
     
     
