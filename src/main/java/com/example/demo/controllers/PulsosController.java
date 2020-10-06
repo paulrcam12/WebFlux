@@ -16,6 +16,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -70,9 +71,29 @@ public class PulsosController {
         return service.findAll();
     }
     
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
     @GetMapping(path = "/subscribe", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
 public Flux<Pulso> subscribe() {
-    
+        System.out.println("OKKKK");
     return this.service.subscribe();
 }
+
+
+
+
+@GetMapping(path = "/{id}/subscribe1", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+public Flux<Pulso> subscribe1(@PathVariable String id) {
+    return this.service.subscribe1(id);
 }
+}
+
+
