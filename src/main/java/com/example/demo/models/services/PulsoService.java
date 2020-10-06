@@ -6,6 +6,7 @@
 package com.example.demo.models.services;
 
 import com.example.demo.models.documents.Pulso;
+import org.springframework.data.mongodb.repository.Tailable;
 import reactor.core.publisher.Flux;
 
 /**
@@ -14,7 +15,7 @@ import reactor.core.publisher.Flux;
  */
 
 public interface PulsoService {
-    
+    @Tailable
     public Flux<Pulso> findAll();
     
 

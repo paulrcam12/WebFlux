@@ -39,7 +39,6 @@ public class PulsosController {
     private PulsoService service;
     //private PulsoDao service;
 
-    @Tailable
     @GetMapping("/mono/tailable")
     public Mono<ResponseEntity<Flux<Pulso>>> listaTailable() {
         return Mono.just(
@@ -65,7 +64,7 @@ public class PulsosController {
     
     
     
-    @Tailable
+    
     @GetMapping(path = "/Flux/tailable", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public Flux<Pulso> streamAllTailable() {
         return service.findAll();
