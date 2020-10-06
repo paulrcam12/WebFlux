@@ -63,7 +63,10 @@ public class PulsosController {
         return service.findAll();
     }
     
-        @GetMapping(path = "/Flux/tailable", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    
+    
+    @Tailable
+    @GetMapping(path = "/Flux/tailable", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public Flux<Pulso> streamAllTailable() {
         return service.findAll();
     }
