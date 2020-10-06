@@ -1,0 +1,13 @@
+com\example\demo\controllers\ProductoController.class
+com\example\demo\models\services\PulsoImp.class
+com\example\demo\models\services\ProductoImp.class
+com\example\demo\models\documents\Pulso.class
+com\example\demo\models\dao\ProductoDao.class
+com\example\demo\SpringWebFluxApplication.class
+com\example\demo\domain\BaseEntity.class
+com\example\demo\models\dao\PulsoDao.class
+com\example\demo\controllers\PulsosController.class
+com\example\demo\listeners\BeforeSaveListener.class
+com\example\demo\models\documents\Producto.class
+com\example\demo\models\services\ProductoService.class
+com\example\demo\models\services\PulsoService.class
